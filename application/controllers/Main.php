@@ -1,10 +1,50 @@
 <?php
-	class Main extends CI_Controller {
+class Main extends CI_Controller {
     
-    //Главная страница|Кузнецов
+    //Авторизация|Кузнецов
 	public function index()
 	{
-        $this->load->view("index");
+        $this->load->view("template/header");
+        $this->load->view("page/login");
+        $this->load->view("template/footer");
+    }
+
+    //Выполнение входа|Кузнецов
+    public function log_action()
+    {
+        $data = array (
+            'login'    => $this->input->post('login'),
+            'password' => $this->input->post('password')
+        );
+
+        $this->load->model('user_m');
+        $result = $this->user_m->sel_user($data);
+
+        if ($result != false)
+        {
+            $session = array(
+                'ID_user'        => $result->ID_user,
+                'full_name_user' => $result->full_name_user,
+                'position'       => $result->position
+            );
+
+            $this->session->set_userdata('login_session', $session);
+
+            switch($result->position)
+            {
+                case 'Методист': redirect((base_url('Методист'))); 
+                break;
+                case 'Менеджер': redirect(base_url('Менеджер'));
+                break;
+                case 'Директор': redirect(base_url('Директор'));
+                break;
+            }
+        }
+        else
+        {
+            $this->session->set_flashdata('login_false', 'Неверный логин или пароль!');
+            redirect(base_url());
+        }
     }
 }
 ?>
