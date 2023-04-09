@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="text-center mt-5">
-                <h1 class="display-6 text-danger"><?=$this->session->userdata('login_false')?></h1>
+                <h1 class="display-6 text-danger"><?=$this->session->userdata('msg')?></h1>
             </div>
         </div>
     </div>

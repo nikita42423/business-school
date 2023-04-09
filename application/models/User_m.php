@@ -20,7 +20,6 @@ class User_m extends CI_Model {
         {
             return false;
         }
-        
     }
 
     //Уничтожение все сессии|Кузнецов
@@ -28,5 +27,5 @@ class User_m extends CI_Model {
     {
         $this->session->sess_destroy();
     }
-
+    
 }

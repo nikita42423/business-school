@@ -32,7 +32,7 @@ class Main extends CI_Controller {
 
             switch($result->position)
             {
-                case 'Методист': redirect((base_url('Методист'))); 
+                case 'Методист': redirect((base_url('methodist/browse_category'))); 
                 break;
                 case 'Менеджер': redirect(base_url('Менеджер'));
                 break;
@@ -42,9 +42,17 @@ class Main extends CI_Controller {
         }
         else
         {
-            $this->session->set_flashdata('login_false', 'Неверный логин или пароль!');
+            $this->session->set_flashdata('msg', 'Неверный логин или пароль!');
             redirect(base_url());
         }
+    }
+
+    //Завершение сессии|Кузнецов
+    public function kill_all_session()
+    {
+        $this->load->model('user_m');
+        $this->user_m->kill_session();
+        redirect(base_url());
     }
 }
 ?>
