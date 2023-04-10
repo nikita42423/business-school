@@ -64,11 +64,7 @@ class Methodist extends CI_Controller {
 
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_methodist", $data);
-<<<<<<< HEAD
-        $this->load->view("pages/browse_form");
-=======
         $this->load->view("pages/form");
->>>>>>> 57001b476258f78f7834dbc227dbf1931dd9d0ae
         $this->load->view("templates/footer");
     }
 
@@ -89,9 +85,6 @@ class Methodist extends CI_Controller {
 
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_methodist", $data);
-<<<<<<< HEAD
-        $this->load->view("pages/browse_type_doc");
-=======
         $this->load->view("pages/type_doc");
         $this->load->view("templates/footer");
     }
@@ -156,7 +149,6 @@ class Methodist extends CI_Controller {
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_methodist", $data);
         $this->load->view("pages/schedule");
->>>>>>> 57001b476258f78f7834dbc227dbf1931dd9d0ae
         $this->load->view("templates/footer");
     }
 }
