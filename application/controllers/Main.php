@@ -4,9 +4,9 @@ class Main extends CI_Controller {
     //Авторизация|Кузнецов
 	public function index()
 	{
-        $this->load->view("template/header");
-        $this->load->view("page/login");
-        $this->load->view("template/footer");
+        $this->load->view("templates/header");
+        $this->load->view("pages/login");
+        $this->load->view("templates/footer");
     }
 
     //Выполнение входа|Кузнецов
@@ -34,7 +34,7 @@ class Main extends CI_Controller {
             {
                 case 'Методист': redirect((base_url('methodist/browse_category'))); 
                 break;
-                case 'Менеджер': redirect(base_url('Менеджер'));
+                case 'Менеджер': redirect(base_url('manager/browse_record'));
                 break;
                 case 'Директор': redirect(base_url('Директор'));
                 break;

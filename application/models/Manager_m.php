@@ -1,5 +1,5 @@
 <?php
-class Record_m extends CI_Model {
+class Manager_m extends CI_Model {
 
     public function __construct()
     {
@@ -41,6 +41,13 @@ class Record_m extends CI_Model {
         return $query->result_array();
     }
 
+    //Выбрать клиента|Пручковский
+    public function sel_client()
+    {
+        $query = $this->db->get('client');
+        return $query->result_array();
+    }
+
     //Выбрать форма|Пручковский
     public function sel_teaching()
     {
@@ -52,4 +59,31 @@ class Record_m extends CI_Model {
                           ->get();
         return $query->result_array();
     }
+
+    //Выбрать графика курсов|Пручковский
+    public function sel_schedule($ID_program = null)
+    {
+        $query = $this->db->select("*")
+                          ->from("`schedule`,`program`")
+                          ->where("`schedule`.`ID_program`=`program`.`ID_program`")
+                          ->where("`schedule`.`ID_program`=$ID_program")
+                          ->get();
+        return $query->result_array();
+    }
+
+    //Добавить запись|Пручковский
+    public function add_record($data)
+    {
+        $this->db->insert('teaching', $data);
+    }
+
+    //Отметка об окончании обучения|Пручковский
+    public function otm_record($ID_teaching, $number, $date_start_t)
+    {
+        $this->db->set('number_doc', $number)
+                 ->set('date_end_t', $date_start_t)
+                 ->where('ID_teaching', $ID_teaching)
+                 ->update('teaching');
+    }
+
 }

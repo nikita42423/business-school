@@ -16,10 +16,10 @@ class Methodist extends CI_Controller {
         $this->load->model('category_m');
         $data['category'] = $this->category_m->sel_category();
         
-        $this->load->view("template/header");
-        $this->load->view("template/navbar_methodist", $data);
-        $this->load->view("page/browse_category");
-        $this->load->view("template/footer");
+        $this->load->view("templates/header");
+        $this->load->view("templates/navbar_methodist", $data);
+        $this->load->view("pages/browse_category");
+        $this->load->view("templates/footer");
     }
 
     //Просмотр вида|Кузнецов
@@ -37,10 +37,10 @@ class Methodist extends CI_Controller {
         $this->load->model('type_m');
         $data['type'] = $this->type_m->sel_type();
 
-        $this->load->view("template/header");
-        $this->load->view("template/navbar_methodist", $data);
-        $this->load->view("page/browse_type");
-        $this->load->view("template/footer");
+        $this->load->view("templates/header");
+        $this->load->view("templates/navbar_methodist", $data);
+        $this->load->view("pages/browse_type");
+        $this->load->view("templates/footer");
     }
 
     //Просмотр формы|Кузнецов
@@ -58,10 +58,10 @@ class Methodist extends CI_Controller {
         $this->load->model('form_m');
         $data['form'] = $this->form_m->sel_form();
 
-        $this->load->view("template/header");
-        $this->load->view("template/navbar_methodist", $data);
-        $this->load->view("page/browse_form");
-        $this->load->view("template/footer");
+        $this->load->view("templates/header");
+        $this->load->view("templates/navbar_methodist", $data);
+        $this->load->view("pages/browse_form");
+        $this->load->view("templates/footer");
     }
 
     //Просмотр вида документа|Кузнецов
@@ -79,10 +79,10 @@ class Methodist extends CI_Controller {
         $this->load->model('type_doc_m');
         $data['type_doc'] = $this->type_doc_m->sel_type_doc();
 
-        $this->load->view("template/header");
-        $this->load->view("template/navbar_methodist", $data);
-        $this->load->view("page/browse_type_doc");
-        $this->load->view("template/footer");
+        $this->load->view("templates/header");
+        $this->load->view("templates/navbar_methodist", $data);
+        $this->load->view("pages/browse_type_doc");
+        $this->load->view("templates/footer");
     }
 }
 ?>
