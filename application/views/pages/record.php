@@ -19,7 +19,7 @@
                             <div class="col">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary"><i class="bi bi-person-vcard text-white"></i></span>
-                                    <select class="form-select" name="pol">
+                                    <select class="form-select" name="category">
                                         <?php foreach ($category as $row) {?>
                                         <option value="<?=$row['ID_category']?>"><?=$row['name_category']?></option>
                                         <?php }?>
@@ -29,7 +29,7 @@
                             <div class="col">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary"><i class="bi bi-person-vcard text-white"></i></span>
-                                    <select class="form-select" name="pol">
+                                    <select class="form-select" name="type">
                                         <?php foreach ($type as $row) {?>
                                         <option value="<?=$row['ID_type']?>"><?=$row['name_type']?></option>
                                         <?php }?>
@@ -39,7 +39,7 @@
                             <div class="col">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary"><i class="bi bi-person-vcard text-white"></i></span>
-                                    <select class="form-select" name="pol">
+                                    <select class="form-select" name="form">
                                         <?php foreach ($form as $row) {?>
                                         <option value="<?=$row['ID_form']?>"><?=$row['name_form']?></option>
                                         <?php }?>
@@ -49,7 +49,7 @@
                             <div class="col">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary"><i class="bi bi-person-vcard text-white"></i></span>
-                                    <input type="text" class="form-control" name="fio" placeholder="Макс. стоимость" required>
+                                    <input type="text" class="form-control" name="number" placeholder="Макс. стоимость" required>
                                 </div>
                             </div>
                             <div class="col">
