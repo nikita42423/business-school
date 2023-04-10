@@ -6,7 +6,7 @@ class Type_m extends CI_Model {
         $this->load->database();
     }
 
-    //Выбрать тип|Кузнецов
+    //Выбрать вид|Кузнецов
     public function sel_type()
     {
         $query = $this->db->get('type');

@@ -5,19 +5,24 @@
             <p>Добро пожаловать! Администратор<b><br><?=$session['full_name_user']?></b></p>
         </a>
         <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?=base_url('methodist/browse_category')?>">Справочная информация</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Ифнормация
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="<?=base_url('methodist/browse_category')?>">Справочная информация</a></li>
+                    <li><a class="dropdown-item" href="<?=base_url('methodist/browse_teacher')?>">Преподаватели</a></li>
+                </ul>
             </li>
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Списки заказов
+                    Образование
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="<?=base_url('')?>">По контрагентам</a></li>
-                    <li><a class="dropdown-item" href="<?=base_url('')?>">По товарам</a></li>
-                    <li><a class="dropdown-item" href="<?=base_url('')?>">Не выполненных срок</a></li>
+                    <li><a class="dropdown-item" href="<?=base_url('methodist/browse_program')?>">Образовательные программы</a></li>
+                    <li><a class="dropdown-item" href="<?=base_url('methodist/browse_schedule')?>">График курсов</a></li>
                 </ul>
             </li>
         </ul>

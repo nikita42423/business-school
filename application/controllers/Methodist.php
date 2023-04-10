@@ -18,7 +18,7 @@ class Methodist extends CI_Controller {
         
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_methodist", $data);
-        $this->load->view("pages/browse_category");
+        $this->load->view("pages/category");
         $this->load->view("templates/footer");
     }
 
@@ -39,7 +39,11 @@ class Methodist extends CI_Controller {
 
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_methodist", $data);
+<<<<<<< HEAD
         $this->load->view("pages/browse_type");
+=======
+        $this->load->view("pages/type");
+>>>>>>> 57001b476258f78f7834dbc227dbf1931dd9d0ae
         $this->load->view("templates/footer");
     }
 
@@ -60,7 +64,11 @@ class Methodist extends CI_Controller {
 
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_methodist", $data);
+<<<<<<< HEAD
         $this->load->view("pages/browse_form");
+=======
+        $this->load->view("pages/form");
+>>>>>>> 57001b476258f78f7834dbc227dbf1931dd9d0ae
         $this->load->view("templates/footer");
     }
 
@@ -81,7 +89,74 @@ class Methodist extends CI_Controller {
 
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_methodist", $data);
+<<<<<<< HEAD
         $this->load->view("pages/browse_type_doc");
+=======
+        $this->load->view("pages/type_doc");
+        $this->load->view("templates/footer");
+    }
+
+    //Просмотр преподаватели|Кузнецов
+    public function browse_teacher()
+	{
+        //Сессия
+        $data['session'] = $this->session->userdata('login_session');
+        if (!isset($data['session']))
+        {
+        	$this->session->set_flashdata('msg', 'Истек срок действия сессии. Выполните вход.');
+            redirect(base_url());
+        }
+
+        //Данные из БД
+        $this->load->model('teacher_m');
+        $data['teacher'] = $this->teacher_m->sel_teacher();
+
+        $this->load->view("templates/header");
+        $this->load->view("templates/navbar_methodist", $data);
+        $this->load->view("pages/teacher");
+        $this->load->view("templates/footer");
+    }
+
+    //Просмотр образовательной программы|Кузнецов
+    public function browse_program()
+	{
+        //Сессия
+        $data['session'] = $this->session->userdata('login_session');
+        if (!isset($data['session']))
+        {
+        	$this->session->set_flashdata('msg', 'Истек срок действия сессии. Выполните вход.');
+            redirect(base_url());
+        }
+
+        //Данные из БД
+        $this->load->model('program_m');
+        $data['program'] = $this->program_m->sel_program();
+
+        $this->load->view("templates/header");
+        $this->load->view("templates/navbar_methodist", $data);
+        $this->load->view("pages/program");
+        $this->load->view("templates/footer");
+    }
+
+    //Просмотр график курсов|Кузнецов
+    public function browse_schedule()
+	{
+        //Сессия
+        $data['session'] = $this->session->userdata('login_session');
+        if (!isset($data['session']))
+        {
+        	$this->session->set_flashdata('msg', 'Истек срок действия сессии. Выполните вход.');
+            redirect(base_url());
+        }
+
+        //Данные из БД
+        $this->load->model('schedule_m');
+        $data['schedule'] = $this->schedule_m->sel_schedule();
+
+        $this->load->view("templates/header");
+        $this->load->view("templates/navbar_methodist", $data);
+        $this->load->view("pages/schedule");
+>>>>>>> 57001b476258f78f7834dbc227dbf1931dd9d0ae
         $this->load->view("templates/footer");
     }
 }
