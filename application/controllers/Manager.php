@@ -8,6 +8,21 @@
 		$data['session'] = $this->session->userdata('login_session');
 
         $this->load->model('manager_m');
+        $data['teaching'] = $this->manager_m->sel_teaching();
+
+        $this->load->view('templates/header');
+        $this->load->view('templates/navbar_manager', $data);
+        $this->load->view('pages/record', $data);
+        $this->load->view('templates/footer');
+    }
+
+    //Просмотр графика курсов|Пручковский
+	public function browse_add_record()
+	{
+        //Сессия
+		$data['session'] = $this->session->userdata('login_session');
+
+        $this->load->model('manager_m');
         $data['record'] = $this->manager_m->sel_record();
         $data['category'] = $this->manager_m->sel_category();
         $data['type'] = $this->manager_m->sel_type();
@@ -17,7 +32,7 @@
 
         $this->load->view('templates/header');
         $this->load->view('templates/navbar_manager', $data);
-        $this->load->view('pages/record', $data);
+        $this->load->view('pages/add_record', $data);
         $this->load->view('templates/footer');
     }
 
@@ -58,7 +73,7 @@
         }
     }
 
-    //Добавление записи|Пручковский
+    //Отметка об окончании обучения|Пручковский
 	public function otm_record()
 	{
         if (!empty($_POST))

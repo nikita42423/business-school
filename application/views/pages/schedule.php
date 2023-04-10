@@ -10,11 +10,13 @@
 </div>
 
 <div class="text-center">
-    <a href="<?=base_url('manager/browse_record')?>"><button class="btn btn-primary">Назад</button></a>
+    <a href="<?=base_url('manager/browse_add_record')?>"><button class="btn btn-primary">Назад</button></a>
 </div>
 
 <div class="container">
     <div class="container-fluid" style="margin-top:20px">
+
+        <hr>
         Скрипт для пагинации
         <script>
             $(document).ready(function () {
@@ -94,5 +96,6 @@
                 <?php }?>
             </tbody>
         </table>
+        <hr>
     </div>
 </div>
