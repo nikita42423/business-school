@@ -65,6 +65,8 @@
 
 <div class="container">
     <div class="container-fluid" style="margin-top:20px">
+        <hr>
+
         Скрипт для пагинации
         <script>
             $(document).ready(function () {
@@ -139,7 +141,7 @@
                     <td><?=$row['full_name_client']?></td>
                     <td><?=$row['date_start_t']?></td>
                     <td><?=$row['date_end_t']?></td>
-                    <td><?=$row['number_doc']?></td>             
+                    <td><?=$row['number_doc']?></td>
                     <td>
 
                     <!-- Триггер -->
@@ -182,7 +184,7 @@
                         </div>
                     </div>
                         
-                    </td>             
+                    </td>
                 </tr>
                 <?php }?>
             </tbody>
