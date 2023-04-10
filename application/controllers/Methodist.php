@@ -39,11 +39,7 @@ class Methodist extends CI_Controller {
 
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_methodist", $data);
-<<<<<<< HEAD
-        $this->load->view("pages/browse_type");
-=======
         $this->load->view("pages/type");
->>>>>>> 57001b476258f78f7834dbc227dbf1931dd9d0ae
         $this->load->view("templates/footer");
     }
 
