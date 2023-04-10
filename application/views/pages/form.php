@@ -1,4 +1,5 @@
 <div class="container">
+    <h1 class="display-3 text-center mb-3">Справочная информация</h1>
     <ul class="nav nav-tabs mb-4">
 
         <li class="nav-item">
@@ -19,6 +20,18 @@
 
     </ul>
 
+    <form class="row g-3 mb-3" action="" method="post">
+        <div class="col-auto">
+            <input type="text" readonly class="form-control-plaintext" value="Название формы">
+        </div>
+        <div class="col-auto">
+            <input type="password" name="name_category" class="form-control" required>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </div>
+    </form>
+
     <!-- Скрипт для пагинации -->
     <script>
     $(document).ready(function () {
@@ -31,6 +44,8 @@
             <tr>
                 <th scope="col">№</th>
                 <th scope="col">Название формы</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -38,6 +53,12 @@
             <tr>
                 <th scope="row"><?=$row['ID_form']?></th>
                 <td><?=$row['name_form']?></td>
+                <td>
+                    <a href="" class="btn btn-primary">Изменить</a>
+                </td>
+                <td>
+                    <a href="" class="btn btn-danger">Удалить</a>
+                </td>
             </tr>
             <?php }?>
         </tbody>

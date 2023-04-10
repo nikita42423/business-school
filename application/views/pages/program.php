@@ -1,0 +1,96 @@
+<div class="container">
+    <h1 class="display-3 text-center mb-3">Образовательные программы</h1>
+
+    <form class="mb-3" action="" method="post">
+        <div class="row g-3 mb-2">
+            <div class="col-4">
+                <label for="name_program" class="form-label">Название программы</label>
+                <input type="text" class="form-control" name="name_program" required>
+            </div>
+            <div class="col-2">
+                <label for="ID_category" class="form-label">Категория</label>
+                <select class="form-select" name="ID_category" required>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="col-2">
+                <label for="ID_type" class="form-label">Вид</label>
+                <select class="form-select" name="ID_type" required>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="col-2">
+                <label for="ID_form" class="form-label">Форма</label>
+                <select class="form-select" name="ID_form" required>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="col-2">
+                <label for="ID_type_doc" class="form-label">Вид документа</label>
+                <select class="form-select" name="ID_type_doc" required>
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+        <div class="row g-3">
+            <div class="col-3">
+                <label for="ID_teacher" class="form-label">Преподаватель</label>
+                <select class="form-select" name="ID_teacher" required>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="col-2">
+                <label for="price" class="form-label">Цена</label>
+                <input type="number" class="form-control" name="price" step="0.01" min="0" max="999999.99" placeholder="0,00" required>
+            </div>
+            <div class="col-2 align-self-end">
+                <button type="submit" class="btn btn-primary">Добавить</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Скрипт для пагинации -->
+    <script>
+    $(document).ready(function () {
+        $('#program').DataTable();
+    });
+    </script>
+
+    <table id="program" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Название программы</th>
+                <th scope="col">Категория</th>
+                <th scope="col">Вид</th>
+                <th scope="col">Форма</th>
+                <th scope="col">Вид документа</th>
+                <th scope="col">Преподаватель</th>
+                <th scope="col">Цена</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($program as $row) {?>
+            <tr>
+                <th scope="row"><?=$row['ID_program']?></th>
+                <td><?=$row['name_program']?></td>
+                <td><?=$row['name_category']?></td>
+                <td><?=$row['name_type']?></td>
+                <td><?=$row['name_form']?></td>
+                <td><?=$row['name_doc']?></td>
+                <td><?=$row['full_name_teacher']?></td>
+                <td><?=$row['price']?></td>
+                <td>
+                    <a href="" class="btn btn-primary">Изменить</a>
+                </td>
+                <td>
+                    <a href="" class="btn btn-danger">Удалить</a>
+                </td>
+            </tr>
+            <?php }?>
+        </tbody>
+    </table>
+
+</div>

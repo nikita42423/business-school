@@ -107,19 +107,20 @@ CREATE TABLE `program` (
   `ID_form` int NOT NULL,
   `ID_type_doc` int NOT NULL,
   `ID_teacher` int NOT NULL,
-  `count_hour` int NOT NULL
+  `count_hour` int NOT NULL,
+  `price` decimal NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `program`
 --
 
-INSERT INTO `program` (`ID_program`, `name_program`, `ID_category`, `ID_type`, `ID_form`, `ID_type_doc`, `ID_teacher`, `count_hour`) VALUES
-(1, 'ИУ7', 3, 1, 1, 4, 1, 500),
-(2, 'ИУ6', 2, 2, 2, 1, 1, 300),
-(3, 'ИУ5', 1, 1, 3, 2, 2, 200),
-(4, 'ИУ4', 2, 2, 4, 3, 2, 350),
-(5, 'ИУ3', 1, 1, 3, 2, 2, 150);
+INSERT INTO `program` (`ID_program`, `name_program`, `ID_category`, `ID_type`, `ID_form`, `ID_type_doc`, `ID_teacher`, `count_hour`, `price`) VALUES
+(1, 'ИУ7', 3, 1, 1, 4, 1, 500, 7000),
+(2, 'ИУ6', 2, 2, 2, 1, 1, 300, 6000),
+(3, 'ИУ5', 1, 1, 3, 2, 2, 200, 5000),
+(4, 'ИУ4', 2, 2, 4, 3, 2, 350, 4000),
+(5, 'ИУ3', 1, 1, 3, 2, 2, 150, 3000);
 
 -- --------------------------------------------------------
 

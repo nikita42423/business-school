@@ -6,7 +6,7 @@ class Type_doc_m extends CI_Model {
         $this->load->database();
     }
 
-    //Выбрать тип|Кузнецов
+    //Выбрать вид документа|Кузнецов
     public function sel_type_doc()
     {
         $query = $this->db->get('type_doc');
