@@ -128,7 +128,7 @@ class Methodist extends CI_Controller {
     }
 
     //Просмотр график курсов|Кузнецов
-    public function browse_schedule()
+    public function browse_schedule_methodist()
 	{
         //Сессия
         $data['session'] = $this->session->userdata('login_session');
@@ -144,7 +144,7 @@ class Methodist extends CI_Controller {
 
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_methodist", $data);
-        $this->load->view("pages/schedule");
+        $this->load->view("pages/schedule_methodist");
         $this->load->view("templates/footer");
     }
 }

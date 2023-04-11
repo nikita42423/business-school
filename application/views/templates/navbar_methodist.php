@@ -22,7 +22,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="<?=base_url('methodist/browse_program')?>">Образовательные программы</a></li>
-                    <li><a class="dropdown-item" href="<?=base_url('methodist/browse_schedule')?>">График курсов</a></li>
+                    <li><a class="dropdown-item" href="<?=base_url('methodist/browse_schedule_methodist')?>">График курсов</a></li>
                 </ul>
             </li>
         </ul>
