@@ -4,3 +4,4 @@
 
     <script src="<?=asset_url()?>/js/bootstrap.bundle.js"></script>
 </body>
+</html>
