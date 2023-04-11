@@ -65,6 +65,7 @@
                             <div class="col">
                                 <br>
                                 <button type="submit" class="btn btn-primary">Поиск</button>
+                                <a href="<?=base_url('manager/browse_add_record')?>"><button type="submit" class="btn btn-danger">Очистить</button></a>
                             </div>
                         </div>
                     </div>

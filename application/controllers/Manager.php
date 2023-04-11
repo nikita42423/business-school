@@ -21,22 +21,31 @@
 	{
         $this->load->model('manager_m');
 
-        if (!empty($_POST))
+        if (!empty($_POST['category']))
         {
-            $data_filter = array();
-            $a = 0;
-
-            foreach ($this->manager_m->sel_category() as $row)
-            {
-                array_push($data_filter, $this->input->post('category'));
-                if ($this->input->post('category') != NULL) $a++;
-            }
-
-            $this->session->set_userdata('filter', $data_filter);
-            $this->session->set_userdata('check', $a);
+            $ID_category  = $this->input->post('ID_category');
+            $data['record'] = $this->manager_m->sel_category_filter($ID_category);
         }
-        
-        $data['record'] = $this->manager_m->sel_record();
+        elseif (!empty($_POST['type']))
+        {
+            $ID_type  = $this->input->post('ID_type');
+            $data['record'] = $this->manager_m->sel_type_filter($ID_type);
+        }
+        elseif (!empty($_POST['from']))
+        {
+            $ID_form  = $this->input->post('ID_form');
+            $data['record'] = $this->manager_m->sel_form_filter($ID_form);
+        }
+        elseif (!empty($_POST['num']))
+        {
+            $number  = $this->input->post('number');
+            $data['record'] = $this->manager_m->sel_number_filter($number);
+        }
+        else
+        {
+            $data['record'] = $this->manager_m->sel_record();
+        }
+
         $data['category'] = $this->manager_m->sel_category();
         $data['type'] = $this->manager_m->sel_type();
         $data['form'] = $this->manager_m->sel_form();
