@@ -12,5 +12,17 @@ class Type_m extends CI_Model {
         $query = $this->db->get('type');
         return $query->result_array();
     }
+
+    //Добавить вид|Кузнецов
+    public function add_type($data)
+    {
+        $this->db->insert('type', $data);
+    }
+
+    //Удалить вид|Кузнецов
+    public function del_type($data)
+    {
+        $this->db->delete('type', $data);
+    }
     
 }

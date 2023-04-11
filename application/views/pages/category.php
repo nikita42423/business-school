@@ -1,3 +1,4 @@
+<!-- Страница просмотра категории (для методиста)|Кузнецов -->
 <div class="container">
     <h1 class="display-3 text-center mb-3">Справочная информация</h1>
     <ul class="nav nav-tabs mb-4">
@@ -20,12 +21,12 @@
         
     </ul>
 
-    <form class="row g-3 mb-3" action="" method="post">
+    <form class="row g-3 mb-3" action="<?=base_url('category/add_category')?>" method="post">
         <div class="col-auto">
             <input type="text" readonly class="form-control-plaintext" value="Название категории">
         </div>
         <div class="col-auto">
-            <input type="password" name="name_category" class="form-control" required>
+            <input type="text" name="name_category" class="form-control" required>
         </div>
         <div class="col-auto">
             <button type="submit" class="btn btn-primary">Добавить</button>
@@ -57,7 +58,7 @@
                     <a href="" class="btn btn-primary">Изменить</a>
                 </td>
                 <td>
-                    <a href="" class="btn btn-danger">Удалить</a>
+                    <a href="<?=base_url('category/del_category?ID_category='.$row['ID_category'])?>" class="btn btn-danger">Удалить</a>
                 </td>
             </tr>
             <?php }?>

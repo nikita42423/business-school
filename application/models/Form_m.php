@@ -12,5 +12,16 @@ class Form_m extends CI_Model {
         $query = $this->db->get('form');
         return $query->result_array();
     }
-    
+
+    //Добавить форму|Кузнецов
+    public function add_form($data)
+    {
+        $this->db->insert('form', $data);
+    }
+
+    //Удалить форму|Кузнецов
+    public function del_form($data)
+    {
+        $this->db->delete('form', $data);
+    }
 }

@@ -1,43 +1,64 @@
+<!-- Страница просмотра образовательной программы (для методиста)|Кузнецов -->
 <div class="container">
     <h1 class="display-3 text-center mb-3">Образовательные программы</h1>
 
-    <form class="mb-3" action="" method="post">
+    <form class="mb-3" action="<?=base_url('program/add_program')?>" method="post">
         <div class="row g-3 mb-2">
             <div class="col-4">
                 <label for="name_program" class="form-label">Название программы</label>
                 <input type="text" class="form-control" name="name_program" required>
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <label for="ID_category" class="form-label">Категория</label>
+
                 <select class="form-select" name="ID_category" required>
-                    <option value=""></option>
+                    <?php foreach ($category as $row) {?>
+                        <option value="<?=$row['ID_category']?>"><?=$row['name_category']?></option>
+                    <?php }?>
                 </select>
+
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <label for="ID_type" class="form-label">Вид</label>
+
                 <select class="form-select" name="ID_type" required>
-                    <option value=""></option>
+                    <?php foreach ($type as $row) {?>
+                        <option value="<?=$row['ID_type']?>"><?=$row['name_type']?></option>
+                    <?php }?>
                 </select>
+
             </div>
             <div class="col-2">
                 <label for="ID_form" class="form-label">Форма</label>
+
                 <select class="form-select" name="ID_form" required>
-                    <option value=""></option>
+                    <?php foreach ($form as $row) {?>
+                        <option value="<?=$row['ID_form']?>"><?=$row['name_form']?></option>
+                    <?php }?>
                 </select>
-            </div>
-            <div class="col-2">
-                <label for="ID_type_doc" class="form-label">Вид документа</label>
-                <select class="form-select" name="ID_type_doc" required>
-                    <option value=""></option>
-                </select>
+
             </div>
         </div>
         <div class="row g-3">
+            <div class="col-2">
+                <label for="ID_type_doc" class="form-label">Вид документа</label>
+
+                <select class="form-select" name="ID_type_doc" required>
+                    <?php foreach ($type_doc as $row) {?>
+                        <option value="<?=$row['ID_type_doc']?>"><?=$row['name_doc']?></option>
+                    <?php }?>
+                </select>
+
+            </div>
             <div class="col-3">
                 <label for="ID_teacher" class="form-label">Преподаватель</label>
+
                 <select class="form-select" name="ID_teacher" required>
-                    <option value=""></option>
+                    <?php foreach ($teacher as $row) {?>
+                        <option value="<?=$row['ID_teacher']?>"><?=$row['full_name_teacher']?></option>
+                    <?php }?>
                 </select>
+
             </div>
             <div class="col-2">
                 <label for="price" class="form-label">Цена</label>
@@ -86,7 +107,7 @@
                     <a href="" class="btn btn-primary">Изменить</a>
                 </td>
                 <td>
-                    <a href="" class="btn btn-danger">Удалить</a>
+                <a href="<?=base_url('program/del_program?ID_program='.$row['ID_program'])?>" class="btn btn-danger">Удалить</a>
                 </td>
             </tr>
             <?php }?>

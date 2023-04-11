@@ -12,5 +12,16 @@ class Teacher_m extends CI_Model {
         $query = $this->db->get('teacher');
         return $query->result_array();
     }
-    
+
+    //Добавить преподаватель|Кузнецов
+    public function add_teacher($data)
+    {
+        $this->db->insert('teacher', $data);
+    }
+
+    //Удалить преподаватель|Кузнецов
+    public function del_teacher($data)
+    {
+        $this->db->delete('teacher', $data);
+    }
 }

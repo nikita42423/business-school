@@ -13,5 +13,16 @@ class Schedule_m extends CI_Model {
                           ->get('schedule, program');
         return $query->result_array();
     }
-    
+
+    //Добавить график курсов|Кузнецов
+    public function add_schedule($data)
+    {
+        $this->db->insert('schedule', $data);
+    }
+
+    //Удалить график курсов|Кузнецов
+    public function del_schedule($data)
+    {
+        $this->db->delete('schedule', $data);
+    }    
 }

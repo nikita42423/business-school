@@ -13,4 +13,15 @@ class Type_doc_m extends CI_Model {
         return $query->result_array();
     }
     
+    //Добавить вид документа|Кузнецов
+    public function add_type_doc($data)
+    {
+        $this->db->insert('type_doc', $data);
+    }
+
+    //Удалить вид документа|Кузнецов
+    public function del_type_doc($data)
+    {
+        $this->db->delete('type_doc', $data);
+    }
 }

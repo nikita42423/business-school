@@ -121,9 +121,21 @@ class Methodist extends CI_Controller {
         $this->load->model('program_m');
         $data['program'] = $this->program_m->sel_program();
 
+        //Для составления списка
+        $this->load->model('category_m');
+        $this->load->model('type_m');
+        $this->load->model('form_m');
+        $this->load->model('type_doc_m');
+        $this->load->model('teacher_m');
+        $data['category'] = $this->category_m->sel_category();
+        $data['type']     = $this->type_m->sel_type();
+        $data['form']     = $this->form_m->sel_form();
+        $data['type_doc'] = $this->type_doc_m->sel_type_doc();
+        $data['teacher'] = $this->teacher_m->sel_teacher();
+
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_methodist", $data);
-        $this->load->view("pages/program");
+        $this->load->view("pages/program", $data);
         $this->load->view("templates/footer");
     }
 
@@ -141,6 +153,10 @@ class Methodist extends CI_Controller {
         //Данные из БД
         $this->load->model('schedule_m');
         $data['schedule'] = $this->schedule_m->sel_schedule();
+
+        //Для составления списка
+        $this->load->model('program_m');
+        $data['program'] = $this->program_m->sel_program();
 
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_methodist", $data);

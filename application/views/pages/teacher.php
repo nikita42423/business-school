@@ -1,7 +1,8 @@
+<!-- Страница просмотра преподавателя (для методиста)|Кузнецов -->
 <div class="container">
     <h1 class="display-3 text-center mb-3">Преподаватели</h1>
 
-    <form class="mb-3" action="" method="post">
+    <form class="mb-3" action="<?=base_url('teacher/add_teacher')?>" method="post">
         <div class="row g-3 mb-2">
             <div class="col-3">
                 <label for="full_name_teacher" class="form-label">ФИО преподавателя</label>
@@ -66,7 +67,7 @@
                     <a href="" class="btn btn-primary">Изменить</a>
                 </td>
                 <td>
-                    <a href="" class="btn btn-danger">Удалить</a>
+                    <a href="<?=base_url('teacher/del_teacher?ID_teacher='.$row['ID_teacher'])?>" class="btn btn-danger">Удалить</a>
                 </td>
             </tr>
             <?php }?>

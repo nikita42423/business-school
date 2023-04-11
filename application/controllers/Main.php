@@ -45,6 +45,7 @@ class Main extends CI_Controller {
             $this->session->set_flashdata('msg', 'Неверный логин или пароль!');
             redirect(base_url());
         }
+
     }
 
     //Завершение сессии|Кузнецов

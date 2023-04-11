@@ -1,12 +1,17 @@
+<!-- Страница просмотра графика курсов (для методиста)|Кузнецов -->
 <div class="container">
     <h1 class="display-3 text-center mb-3">График курсов</h1>
 
-    <form class="row g-3 mb-2" action="" method="post">
+    <form class="row g-3 mb-3" action="<?=base_url('schedule/add_schedule')?>" method="post">
         <div class="col-4">
             <label for="ID_program" class="form-label">Название программы</label>
+
             <select class="form-select" name="ID_program" required>
-                <option value=""></option>
+                <?php foreach ($program as $row) {?>
+                    <option value="<?=$row['ID_program']?>"><?=$row['name_program']?></option>
+                <?php }?>
             </select>
+
         </div>
         <div class="col-2">
             <label for="date_start_s" class="form-label">Дата начала</label>
@@ -48,7 +53,7 @@
         <tbody>
         <?php foreach ($schedule as $row) {?>
             <tr>
-                <th scope="row"><?=$row['ID_program']?></th>
+                <th scope="row"><?=$row['ID_schedule']?></th>
                 <td><?=$row['name_program']?></td>
                 <td><?=$row['date_start_s']?></td>
                 <td><?=$row['date_end_s']?></td>
@@ -58,7 +63,7 @@
                     <a href="" class="btn btn-primary">Изменить</a>
                 </td>
                 <td>
-                    <a href="" class="btn btn-danger">Удалить</a>
+                    <a href="<?=base_url('schedule/del_schedule?ID_schedule='.$row['ID_schedule'])?>" class="btn btn-danger">Удалить</a>
                 </td>
             </tr>
             <?php }?>

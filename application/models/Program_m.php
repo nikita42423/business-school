@@ -6,7 +6,7 @@ class Program_m extends CI_Model {
         $this->load->database();
     }
 
-    //Выбрать программу|Кузнецов
+    //Выбрать образовательную программу|Кузнецов
     public function sel_program()
     {
         $query = $this->db->where('program.ID_category = category.ID_category')
@@ -18,4 +18,15 @@ class Program_m extends CI_Model {
         return $query->result_array();
     }
     
+    //Добавить образовательную программу|Кузнецов
+    public function add_program($data)
+    {
+        $this->db->insert('program', $data);
+    }
+
+    //Удалить образовательную программу|Кузнецов
+    public function del_program($data)
+    {
+        $this->db->delete('program', $data);
+    }
 }
