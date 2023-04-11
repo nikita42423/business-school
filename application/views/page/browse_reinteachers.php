@@ -2,11 +2,11 @@
     <ul class="nav nav-tabs mb-4">
 
         <li class="nav-item">
-            <a class="nav-link active" href="<?=base_url('director/browse_reinteachers')?>">Рейтинг преподавателей</a>
+            <a class="nav-link active" href="<?=base_url('director/browse_diretor')?>">Рейтинг преподавателей</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="<?=base_url('director/browse_reinprogmobus')?>">Рейтинг программ обучения</a>
+            <a class="nav-link" href="<?=base_url('director/browse_diretor_prog')?>">Рейтинг программ обучения</a>
         </li>
 
         <li class="nav-item">

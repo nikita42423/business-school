@@ -20,5 +20,21 @@ class Reintech_m extends CI_Model {
                             ->get();
         return $query->result_array();
     }
+
+    // Рейтинг программ обучения | Харламов
+    public function sel_reinprog($date1, $date2)
+    {
+       
+        $query = $this->db->select('category.name_category, program.name_program, program.Price, COUNT(teaching.ID_client), SUM(teaching.ID_client)*program.Price')
+                            ->from('category, teaching, program, schedule, client')
+                            ->where('program.ID_category = category.ID_category')
+                            ->where('teaching.ID_schedule = schedule.ID_schedule')
+                            ->where('teaching.ID_client = client.ID_client')
+                            ->where("schedule.date_start_s BETWEEN '$date1' AND '$date2'")
+                            ->group_by('category.name_category, program.name_program, program.Price')
+                            ->get();
+        return $query->result_array();
+    }
     
 }
+
