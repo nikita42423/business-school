@@ -9,18 +9,7 @@
             <a class="nav-link active" aria-current="page" href="<?=base_url('director/browse_diretor')?>">Отчеты</a>
             </li>
         </ul>
-        <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Списки заказов
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="<?=base_url('')?>">По контрагентам</a></li>
-                    <li><a class="dropdown-item" href="<?=base_url('')?>">По товарам</a></li>
-                    <li><a class="dropdown-item" href="<?=base_url('')?>">Не выполненных срок</a></li>
-                </ul>
-            </li>
-        </ul>
+      
         <div class="col-md-3 text-end">
         <a href="<?=base_url('main/kill_all_session')?>" class="nav-link px-2 link-dark"> <button type="button" class="btn btn-outline-primary me-2">ВЫЙТИ</button></a> 
         </div>
