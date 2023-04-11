@@ -14,13 +14,16 @@
     <div class="container-fluid" style="margin-top:40px">
         <div class="" style="margin-top:100">
             <div class="rounded d-flex justify-content-center">
+                <form action="<?=base_url('manager/browse_add_record')?>" method="post">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="category">
+                                <label class="form-check-label" for="exampleCheck1">Категория</label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary"><i class="bi bi-person-vcard text-white"></i></span>
-                                    <select class="form-select" name="category">
+                                    <select class="form-select" name="ID_category">
                                         <?php foreach ($category as $row) {?>
                                         <option value="<?=$row['ID_category']?>"><?=$row['name_category']?></option>
                                         <?php }?>
@@ -28,9 +31,11 @@
                                 </div>
                             </div>
                             <div class="col">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="type">
+                                <label class="form-check-label" for="exampleCheck1">Вид</label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary"><i class="bi bi-person-vcard text-white"></i></span>
-                                    <select class="form-select" name="type">
+                                    <select class="form-select" name="ID_type">
                                         <?php foreach ($type as $row) {?>
                                         <option value="<?=$row['ID_type']?>"><?=$row['name_type']?></option>
                                         <?php }?>
@@ -38,9 +43,11 @@
                                 </div>
                             </div>
                             <div class="col">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="from">
+                                <label class="form-check-label" for="exampleCheck1">Форма обучения</label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary"><i class="bi bi-person-vcard text-white"></i></span>
-                                    <select class="form-select" name="form">
+                                    <select class="form-select" name="ID_form">
                                         <?php foreach ($form as $row) {?>
                                         <option value="<?=$row['ID_form']?>"><?=$row['name_form']?></option>
                                         <?php }?>
@@ -48,17 +55,21 @@
                                 </div>
                             </div>
                             <div class="col">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="num">
+                                <label class="form-check-label" for="exampleCheck1">Макс. стоимость</label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary"><i class="bi bi-person-vcard text-white"></i></span>
-                                    <input type="text" class="form-control" name="number" placeholder="Макс. стоимость" required>
+                                    <input type="text" class="form-control" name="number" placeholder="Макс. стоимость">
                                 </div>
                             </div>
                             <div class="col">
+                                <br>
                                 <button type="submit" class="btn btn-primary">Поиск</button>
                             </div>
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -86,6 +97,7 @@
                     <th scope="col">Вид документа</th>
                     <th scope="col">Преподаватель</th>
                     <th scope="col">Кол-во часов</th>
+                    <th scope="col">Цена</th>
                     <th></th>
                 </tr>
             </thead>
@@ -100,6 +112,7 @@
                     <td><?=$row['name_doc']?></td>
                     <td><?=$row['full_name_teacher']?></td>
                     <td><?=$row['count_hour']?></td>
+                    <td><?=$row['price']?></td>
                     <td>
                     <form action="<?=base_url('manager/browse_schedule')?>" method="post">
                         <button class="btn btn-primary" name="ID_program" value="<?=$row['ID_program']?>">Выбрать</button>

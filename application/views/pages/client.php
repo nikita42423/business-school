@@ -25,7 +25,7 @@
                                 <h1 class="modal-title fs-5" id="modalAddLabel1">Добавление клиента</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                             </div>
-                            <form action="<?=base_url('client/add_client')?>" method="post">
+                            <form action="<?=base_url('manager/add_client')?>" method="post">
                             <div class="modal-body">
                                 <div class="p-4">
 
@@ -156,7 +156,7 @@
                                     <h1 class="modal-title fs-5" id="modalAddLabel1">Редактирование клиента №<?=$row['ID_client']?></h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                                 </div>
-                                <form action="<?=base_url('client/upd_client')?>" method="post">
+                                <form action="<?=base_url('manager/upd_client')?>" method="post">
                                     <div class="modal-body">
                                         <div class="p-4">
 
@@ -236,7 +236,7 @@
 
                     </td>
                     <td>
-                    <form action="<?=base_url('client/del_client')?>" method="post">
+                    <form action="<?=base_url('manager/del_client')?>" method="post">
                         <button class="btn btn-outline-danger" name="ID_client" value="<?=$row['ID_client']?>">Удалить</button></td>
                     </form>
                 </tr>

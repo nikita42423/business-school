@@ -6,7 +6,8 @@
         </a>
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="<?=base_url('manager/browse_record')?>" class="nav-link active">Запись клиента на обучение</a></li>
-            <li><a href="<?=base_url('client/browse_client')?>" class="nav-link active">Регистрация клиента</a></li>            
+            <li><a href="<?=base_url('manager/browse_client')?>" class="nav-link active">Регистрация клиента</a></li>
+            <li><a href="<?=base_url('manager/browse_user')?>" class="nav-link active">Пользователи</a></li>
         </ul>
         <div class="col-md-3 text-end">
         <a href="<?=base_url('main/kill_all_session')?>" class="nav-link px-2 link-dark"> <button type="button" class="btn btn-outline-primary me-2">ВЫЙТИ</button></a> 
