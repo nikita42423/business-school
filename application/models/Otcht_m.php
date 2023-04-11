@@ -46,6 +46,12 @@ class Otcht_m extends CI_Model {
                             ->get();
         return $query->result_array();
     }
+
+    public function sel_spickok()
+    {
+        $query = $this->db->get('program');
+        return $query->result_array();
+    }
    
     
 }

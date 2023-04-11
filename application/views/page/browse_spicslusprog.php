@@ -27,8 +27,14 @@
 
             <div class="col-md-4">
                 <label for="validationCustom04" class="form-label">Программа обучения</label>
-                <select class="form-select" id="validationCustom04">
-                <option value="">Выберите...</option>
+                <select class="form-select" id="validationCustom04" name="ID_program">
+                    <?php foreach ($prog as $row) { ?>
+                    
+                        <option value="<?=$row['ID_program']?>"><?=$row['name_program']?></option>
+                    
+                    
+                    <?php } ?>
+     
                 </select>
             </div>
             <div class="col-md-3">

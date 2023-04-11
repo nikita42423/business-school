@@ -123,7 +123,7 @@ class Director extends CI_Controller {
         //Данные из БД
         $this->load->model('otcht_m');
         $data['spick'] = $this->otcht_m->sel_spick($date1, $date2);
-        
+        $data['prog'] = $this->otcht_m->sel_spickok();
         $this->load->view("template/header");
         $this->load->view("template/navbar_director", $data);
         $this->load->view("page/browse_spicslusprog");
