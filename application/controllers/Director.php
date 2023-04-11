@@ -109,9 +109,12 @@ class Director extends CI_Controller {
         	$this->session->set_flashdata('msg', 'Истек срок действия сессии. Выполните вход.');
             redirect(base_url());
         }
+        
+        $ID_program = $this->input->post('ID_program');
+
         $date1 = "0000-01-01";
         $date2 = "2100-01-01";
-        
+
         if (!empty($this->input->post('date1'))) {
             $date1 = $this->input->post('date1');
         }
@@ -120,9 +123,13 @@ class Director extends CI_Controller {
             $date2 = $this->input->post('date2');
         }
 
+       
+        
+
         //Данные из БД
         $this->load->model('otcht_m');
-        $data['spick'] = $this->otcht_m->sel_spick($date1, $date2);
+        $data['spick'] = $this->otcht_m->sel_spick($date1, $date2, $ID_program);
+        echo var_dump($this->db->last_query());
         $data['prog'] = $this->otcht_m->sel_spickok();
         $this->load->view("template/header");
         $this->load->view("template/navbar_director", $data);

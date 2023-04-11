@@ -32,7 +32,6 @@
                     
                         <option value="<?=$row['ID_program']?>"><?=$row['name_program']?></option>
                     
-                    
                     <?php } ?>
      
                 </select>
@@ -48,6 +47,7 @@
             </div>
             <div class="col-md-2" style="padding-top: 3%;">
                 <button class="btn btn-primary" type="submit">поиск</button>
+                <a href="<?=base_url('director/browse_spicslusprog')?>"><button class="btn btn-primary" type="submit">Очистить</button></a>
             </div>
             </form>
 
@@ -65,26 +65,23 @@
     <table id="reintch" class="table table-striped" style="width:100%">
         <thead>
             <tr>
+                <th scope="col">ФИО слушателей</th>
                 <th scope="col">Название программы</th>
                 <th scope="col">Категория</th>
-                <th scope="col">Кол-во слушателей</th>
-                <th scope="col">Кол-во очная</th>
-                <th scope="col">Кол-во заочная</th>
-                <th scope="col">Кол-во очно-заочная</th>
-                <th scope="col">Кол-во дистанционно</th>
+                <th scope="col">Дата начало</th>
+                <th scope="col">Дата окончания</th>
 
             </tr>
         </thead>
         <tbody>
         <?php foreach ($spick as $row) {?>
             <tr>
+                <td scope="row"><?=$row['full_name_client']?></td>
                 <td scope="row"><?=$row['name_program']?></td>
                 <td scope="row"><?=$row['name_category']?></td>
-                <td scope="row"><?=$row['COUNT(actual_count_listener)']?></td>
-                <td><?=$row['COUNT(CASE WHEN form.name_form = "Очная" THEN 1 END)']?></td>
-                <td><?=$row['COUNT(CASE WHEN form.name_form = "Заочная" THEN 1 END)']?></td>
-                <td><?=$row['COUNT(CASE WHEN form.name_form = "Очно-заочная" THEN 1 END)']?></td>
-                <td><?=$row['COUNT(CASE WHEN form.name_form = "Дистанционная" THEN 1 END)']?></td>
+                <td><?=$row['date_start_s']?></td>
+                <td><?=$row['date_end_s']?></td>
+      
             </tr>
             <?php }?>
         </tbody>
