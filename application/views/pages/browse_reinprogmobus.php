@@ -33,7 +33,7 @@
                 <label for="validationCustom02" class="form-label">по</label>
                 <input type="date" class="form-control" id="validationCustom02" required name="date2">
             </div>
-            <div class="col-md-4" style="padding-top: 3%;">
+            <div class="col-md-4 align-self-end" style="padding-top: 3%;">
                 <button class="btn btn-primary" type="submit">поиск</button>
             </div>
             </form>
@@ -45,13 +45,17 @@
     <!-- Скрипт для пагинации -->
     <script>
     $(document).ready(function () {
-        $('#reintch').DataTable();
+    $('#reintch').DataTable({
+        order: [[3, 'desc']],
+        });
     });
     </script>
 
     <table id="reintch" class="table table-striped" style="width:100%">
+        <?php $a=1?>
         <thead>
             <tr>
+                <th score="col">Рейтинг</th>
                 <th scope="col">Категория</th>
                 <th scope="col">Название программы</th>
                 <th scope="col">Стоимость</th>
@@ -63,9 +67,10 @@
         <tbody>
         <?php foreach ($reinprom as $row) {?>
             <tr>
-                <td scope="row"><?=$row['name_category']?></td>
-                <td scope="row"><?=$row['name_program']?></td>
-                <td scope="row"><?=$row['Price']?></td>
+                <td scope="row"><?=$a++?></td>
+                <td><?=$row['name_category']?></td>
+                <td><?=$row['name_program']?></td>
+                <td><?=$row['Price']?></td>
                 <td><?=$row['COUNT(teaching.ID_client)']?></td>
                 <td><?=$row['SUM(teaching.ID_client)*program.Price']?></td>
             </tr>

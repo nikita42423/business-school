@@ -28,6 +28,7 @@
             <div class="col-md-4">
                 <label for="validationCustom04" class="form-label">Программа обучения</label>
                 <select class="form-select" id="validationCustom04" name="ID_program">
+                    <option value="all">Все</option>
                     <?php foreach ($prog as $row) { ?>
                     
                         <option value="<?=$row['ID_program']?>"><?=$row['name_program']?></option>
@@ -39,15 +40,17 @@
             <div class="col-md-3">
                 <label for="validationCustom01" class="form-label">Период с</label>
                 <input type="date" class="form-control" id="validationCustom01" required name="date1">
-                
             </div>
             <div class="col-md-3">
                 <label for="validationCustom02" class="form-label">по</label>
                 <input type="date" class="form-control" id="validationCustom02" required name="date2">
             </div>
-            <div class="col-md-2" style="padding-top: 3%;">
+            <div class="col-md-2 align-self-end" style="padding-top: 3%;">
+                <div class="hstack gap-3">
                 <button class="btn btn-primary" type="submit">поиск</button>
                 <a href="<?=base_url('director/browse_spicslusprog')?>"><button class="btn btn-primary" type="submit">Очистить</button></a>
+
+                </div>
             </div>
             </form>
 

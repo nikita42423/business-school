@@ -26,8 +26,6 @@ class Director extends CI_Controller {
         //Данные из БД
         $this->load->model('reintech_m');
         $data['reinteachers'] = $this->reintech_m->sel_reinteach($date1, $date2);
-        
-        echo var_dump($this->db->last_query());
     
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_director", $data);
@@ -112,7 +110,15 @@ class Director extends CI_Controller {
             redirect(base_url());
         }
         
-        $ID_program = $this->input->post('ID_program');
+        if ($this->input->post('ID_program') == 'all')
+        {
+            $ID_program = NULL;
+        }
+        else
+        {
+            $ID_program = $this->input->post('ID_program');
+        }
+        
 
         $date1 = "0000-01-01";
         $date2 = "2100-01-01";
@@ -125,14 +131,11 @@ class Director extends CI_Controller {
             $date2 = $this->input->post('date2');
         }
 
-       
-        
-
         //Данные из БД
         $this->load->model('otcht_m');
         $data['spick'] = $this->otcht_m->sel_spick($date1, $date2, $ID_program);
-        echo var_dump($this->db->last_query());
         $data['prog'] = $this->otcht_m->sel_spickok();
+
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_director", $data);
         $this->load->view("pages/browse_spicslusprog");

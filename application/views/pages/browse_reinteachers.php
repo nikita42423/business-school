@@ -33,7 +33,7 @@
                 <label for="validationCustom02" class="form-label">по</label>
                 <input type="date" class="form-control" id="validationCustom02" required name="date2">
             </div>
-            <div class="col-md-4" style="padding-top: 3%;">
+            <div class="col-md-4 align-self-end" style="padding-top: 3%;">
                 <button class="btn btn-primary" type="submit">поиск</button>
             </div>
             </form>
@@ -52,8 +52,10 @@
     </script>
 
     <table id="reintch" class="table table-striped" style="width:100%">
-        <thead class="table-dark">
+        <?php $a=1?>
+        <thead>
             <tr>
+                <th score="col">Рейтинг</th>
                 <th scope="col">ФИО преподавателей</th>
                 <th scope="col">Кол-во клиентов</th>
                 <th scope="col">Общая выручка</th>
@@ -63,7 +65,8 @@
         <tbody>
         <?php foreach ($reinteachers as $row) {?>
             <tr>
-                <td scope="row"><?=$row['full_name_teacher']?></td>
+                <td scope="row"><?=$a++?></td>
+                <td><?=$row['full_name_teacher']?></td>
                 <td><?=$row['COUNT(client.ID_client)']?></td>
                 <td><?=$row['COUNT(client.ID_client)*SUM(program.Price)']?></td>
             </tr>

@@ -33,7 +33,7 @@
                 <label for="validationCustom02" class="form-label">по</label>
                 <input type="date" class="form-control" id="validationCustom02" required name="date2">
             </div>
-            <div class="col-md-4" style="padding-top: 3%;">
+            <div class="col-md-4 align-self-end" style="padding-top: 3%;">
                 <button class="btn btn-primary" type="submit">поиск</button>
             </div>
             </form>

@@ -31,15 +31,13 @@ class Otcht_m extends CI_Model {
     public function sel_spick($date1, $date2, $ID_program)
     {
        
-        $query = $this->db->select('full_name_client, name_program, name_category, date_start_s, date_end_s')
-                            ->from('program, client, teaching, schedule, category')
-                            ->where('teaching.ID_client=client.ID_client')
-                            ->where('teaching.ID_schedule=schedule.ID_schedule')
-                            ->where('program.ID_category=category.ID_category')
-                            ->where('schedule.ID_program=program.ID_program')
-                            ->where('program.ID_program', $ID_program)
-                            ->where("schedule.date_end_s BETWEEN '$date1' AND '$date2'")
-                            ->get();
+        $query = $this->db->where('teaching.ID_client=client.ID_client')
+                          ->where('teaching.ID_schedule=schedule.ID_schedule')
+                          ->where('program.ID_category=category.ID_category')
+                          ->where('schedule.ID_program=program.ID_program')
+                          ->like('schedule.ID_program', $ID_program,false,false)
+                          ->where("schedule.date_end_s BETWEEN '$date1' AND '$date2'")
+                          ->get('program, client, teaching, schedule, category');
         return $query->result_array();
     }
 
