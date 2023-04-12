@@ -23,7 +23,7 @@ class Client_m extends CI_Model {
     public function upd_client($full_name_client, $date_client, $pol, 
     $series, $passport_number, $address, $education, $phone, $email, $ID_client)
     {
-        $this->db->set('date_client', $full_name_client)
+        $this->db->set('full_name_client', $full_name_client)
                  ->set('date_client', $date_client)
                  ->set('pol', $pol)
                  ->set('series', $series)

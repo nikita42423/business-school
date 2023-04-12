@@ -27,6 +27,66 @@ class Manager_m extends CI_Model {
         return $query->result_array();
     }
 
+    //Выбрать категория для фильтр|Пручковский
+    public function sel_category_filter($ID_category = null)
+    {
+        $query = $this->db->select("*")
+                          ->from("`program`,`type`,`type_doc`,`form`,`category`,`teacher`")
+                          ->where("program.ID_category=category.ID_category")
+                          ->where("program.ID_type=type.ID_type")
+                          ->where("program.ID_type_doc=type_doc.ID_type_doc")
+                          ->where("program.ID_form=form.ID_form")
+                          ->where("program.ID_teacher=teacher.ID_teacher")
+                          ->where("program.ID_category=$ID_category")
+                          ->get();
+        return $query->result_array();
+    }
+
+    //Выбрать вид для фильтр|Пручковский
+    public function sel_type_filter($ID_type = null)
+    {
+        $query = $this->db->select("*")
+                          ->from("`program`,`type`,`type_doc`,`form`,`category`,`teacher`")
+                          ->where("program.ID_category=category.ID_category")
+                          ->where("program.ID_type=type.ID_type")
+                          ->where("program.ID_type_doc=type_doc.ID_type_doc")
+                          ->where("program.ID_form=form.ID_form")
+                          ->where("program.ID_teacher=teacher.ID_teacher")
+                          ->where("program.ID_type=$ID_type")
+                          ->get();
+        return $query->result_array();
+    }
+
+    //Выбрать форм для фильтр|Пручковский
+    public function sel_form_filter($ID_form = null)
+    {
+        $query = $this->db->select("*")
+                          ->from("`program`,`type`,`type_doc`,`form`,`category`,`teacher`")
+                          ->where("program.ID_category=category.ID_category")
+                          ->where("program.ID_type=type.ID_type")
+                          ->where("program.ID_type_doc=type_doc.ID_type_doc")
+                          ->where("program.ID_form=form.ID_form")
+                          ->where("program.ID_teacher=teacher.ID_teacher")
+                          ->where("program.ID_form=$ID_form")
+                          ->get();
+        return $query->result_array();
+    }
+
+    //Выбрать макс.стоимость для фильтр|Пручковский
+    public function sel_number_filter($number = null)
+    {
+        $query = $this->db->select("*")
+                          ->from("`program`,`type`,`type_doc`,`form`,`category`,`teacher`")
+                          ->where("program.ID_category=category.ID_category")
+                          ->where("program.ID_type=type.ID_type")
+                          ->where("program.ID_type_doc=type_doc.ID_type_doc")
+                          ->where("program.ID_form=form.ID_form")
+                          ->where("program.ID_teacher=teacher.ID_teacher")
+                          ->where("program.price <=$number")
+                          ->get();
+        return $query->result_array();
+    }
+
     //Выбрать фид|Пручковский
     public function sel_type()
     {
