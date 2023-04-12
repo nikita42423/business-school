@@ -16,6 +16,9 @@ class Schedule extends CI_Controller {
             $this->load->model('schedule_m');
             $this->schedule_m->add_schedule($data);
 
+            //Сообщение об успеха
+            $this->session->set_flashdata('msg', 'Успешно добавлен!');
+
             redirect(base_url('methodist/browse_schedule_methodist'));
         }
     }
@@ -29,6 +32,9 @@ class Schedule extends CI_Controller {
 
         $this->load->model('schedule_m');
         $this->schedule_m->del_schedule($data);
+
+        //Сообщение об успеха
+        $this->session->set_flashdata('msg', 'Успешно удален!');
 
         redirect(base_url('methodist/browse_schedule_methodist'));
     }
@@ -47,6 +53,9 @@ class Schedule extends CI_Controller {
 
         $this->load->model('schedule_m');
         $this->schedule_m->upd_schedule($id, $data);
+
+        //Сообщение об успеха
+        $this->session->set_flashdata('msg', 'Успешно изменен!');
 
         redirect(base_url('methodist/browse_schedule_methodist'));
     }

@@ -1,7 +1,8 @@
 <!-- Страница просмотра образовательной программы (для методиста)|Кузнецов -->
 <div class="container">
     <h1 class="display-3 text-center mb-3">Образовательные программы</h1>
-
+    <h1 class="display-6 text-center mb-3 text-success"><?=$this->session->userdata('msg')?></h1>
+    
     <form class="mb-3" action="<?=base_url('program/add_program')?>" method="post">
         <div class="row g-3 mb-2">
             <div class="col-4">

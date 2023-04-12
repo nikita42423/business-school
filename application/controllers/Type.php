@@ -13,6 +13,9 @@ class Type extends CI_Controller {
             $this->load->model('type_m');
             $this->type_m->add_type($data);
 
+            //Сообщение об успеха
+            $this->session->set_flashdata('msg', 'Успешно добавлен!');
+
             redirect(base_url('methodist/browse_type'));
         }
     }
@@ -27,6 +30,9 @@ class Type extends CI_Controller {
         $this->load->model('type_m');
         $this->type_m->del_type($data);
 
+        //Сообщение об успеха
+        $this->session->set_flashdata('msg', 'Успешно удален!');
+
         redirect(base_url('methodist/browse_type'));
     }
 
@@ -40,6 +46,9 @@ class Type extends CI_Controller {
 
         $this->load->model('type_m');
         $this->type_m->upd_type($id, $data);
+
+        //Сообщение об успеха
+        $this->session->set_flashdata('msg', 'Успешно изменен!');
 
         redirect(base_url('methodist/browse_type'));
     }

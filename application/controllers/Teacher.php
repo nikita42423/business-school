@@ -17,6 +17,9 @@ class Teacher extends CI_Controller {
             $this->load->model('teacher_m');
             $this->teacher_m->add_teacher($data);
 
+            //Сообщение об успеха
+            $this->session->set_flashdata('msg', 'Успешно добавлен!');
+
             redirect(base_url('methodist/browse_teacher'));
         }
     }
@@ -30,6 +33,9 @@ class Teacher extends CI_Controller {
 
         $this->load->model('teacher_m');
         $this->teacher_m->del_teacher($data);
+
+        //Сообщение об успеха
+        $this->session->set_flashdata('msg', 'Успешно удален!');
 
         redirect(base_url('methodist/browse_teacher'));
     }
@@ -59,6 +65,9 @@ class Teacher extends CI_Controller {
 
         $this->load->model('teacher_m');
         $this->teacher_m->upd_teacher($id, $data);
+
+        //Сообщение об успеха
+        $this->session->set_flashdata('msg', 'Успешно изменен!');
 
         redirect(base_url('methodist/browse_teacher'));
     }

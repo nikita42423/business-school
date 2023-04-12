@@ -13,6 +13,9 @@ class Category extends CI_Controller {
             $this->load->model('category_m');
             $this->category_m->add_category($data);
 
+            //Сообщение об успеха
+            $this->session->set_flashdata('msg', 'Успешно добавлен!');
+
             redirect(base_url('methodist/browse_category'));
         }
     }
@@ -27,6 +30,9 @@ class Category extends CI_Controller {
         $this->load->model('category_m');
         $this->category_m->del_category($data);
 
+        //Сообщение об успеха
+        $this->session->set_flashdata('msg', 'Успешно удален!');
+
         redirect(base_url('methodist/browse_category'));
     }
 
@@ -40,6 +46,9 @@ class Category extends CI_Controller {
 
         $this->load->model('category_m');
         $this->category_m->upd_category($id, $data);
+
+        //Сообщение об успеха
+        $this->session->set_flashdata('msg', 'Успешно изменен!');
 
         redirect(base_url('methodist/browse_category'));
     }

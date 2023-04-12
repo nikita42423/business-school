@@ -1,6 +1,7 @@
 <!-- Страница просмотра преподавателя (для методиста)|Кузнецов -->
 <div class="container">
     <h1 class="display-3 text-center mb-3">Преподаватели</h1>
+    <h1 class="display-6 text-center mb-3 text-success"><?=$this->session->userdata('msg')?></h1>
 
     <form class="mb-3" action="<?=base_url('teacher/add_teacher')?>" method="post">
         <div class="row g-3 mb-2">

@@ -12,6 +12,9 @@ class Form extends CI_Controller {
 
             $this->load->model('form_m');
             $this->form_m->add_form($data);
+            
+            //Сообщение об успеха
+            $this->session->set_flashdata('msg', 'Успешно добавлен!');
 
             redirect(base_url('methodist/browse_form'));
         }
@@ -27,6 +30,9 @@ class Form extends CI_Controller {
         $this->load->model('form_m');
         $this->form_m->del_form($data);
 
+        //Сообщение об успеха
+        $this->session->set_flashdata('msg', 'Успешно удален!');
+
         redirect(base_url('methodist/browse_form'));
     }
 
@@ -40,6 +46,9 @@ class Form extends CI_Controller {
 
         $this->load->model('form_m');
         $this->form_m->upd_form($id, $data);
+
+        //Сообщение об успеха
+        $this->session->set_flashdata('msg', 'Успешно изменен!');
 
         redirect(base_url('methodist/browse_form'));
     }

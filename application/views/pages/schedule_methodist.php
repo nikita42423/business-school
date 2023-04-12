@@ -1,7 +1,8 @@
 <!-- Страница просмотра графика курсов (для методиста)|Кузнецов -->
 <div class="container">
     <h1 class="display-3 text-center mb-3">График курсов</h1>
-
+    <h1 class="display-6 text-center mb-3 text-success"><?=$this->session->userdata('msg')?></h1>
+    
     <form class="row g-3 mb-3" action="<?=base_url('schedule/add_schedule')?>" method="post">
         <div class="col-4">
             <label for="ID_program" class="form-label">Название программы</label>

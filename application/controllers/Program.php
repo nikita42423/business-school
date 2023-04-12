@@ -19,6 +19,9 @@ class Program extends CI_Controller {
             $this->load->model('program_m');
             $this->program_m->add_program($data);
 
+            //Сообщение об успеха
+            $this->session->set_flashdata('msg', 'Успешно добавлен!');
+
             redirect(base_url('methodist/browse_program'));
         }
     }
@@ -32,6 +35,9 @@ class Program extends CI_Controller {
 
         $this->load->model('program_m');
         $this->program_m->del_program($data);
+
+        //Сообщение об успеха
+        $this->session->set_flashdata('msg', 'Успешно удален!');
 
         redirect(base_url('methodist/browse_program'));
     }
@@ -52,6 +58,9 @@ class Program extends CI_Controller {
 
         $this->load->model('program_m');
         $this->program_m->upd_program($id, $data);
+
+        //Сообщение об успеха
+        $this->session->set_flashdata('msg', 'Успешно изменен!');
 
         redirect(base_url('methodist/browse_program'));
         echo var_dump($this->db->last_query());

@@ -1,6 +1,8 @@
 <!-- Страница просмотра вида (для методиста)|Кузнецов -->
 <div class="container">
     <h1 class="display-3 text-center mb-3">Справочная информация</h1>
+    <h1 class="display-6 text-center mb-3 text-success"><?=$this->session->userdata('msg')?></h1>
+    
     <ul class="nav nav-tabs mb-4">
 
         <li class="nav-item">
