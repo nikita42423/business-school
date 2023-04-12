@@ -13,13 +13,13 @@ class Client_m extends CI_Model {
         return $query->result_array();
     }
 
-    //Добавить клиент|Пручковский
+    //Добавить клиента|Пручковский
     public function add_client($data)
     {
         $this->db->insert('client', $data);
     }
 
-    //Изменить клиент|Пручковский
+    //Изменить клиента|Пручковский
     public function upd_client($ID_client,$data)
     {
         $this->db->where('ID_client', $ID_client)

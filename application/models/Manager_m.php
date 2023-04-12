@@ -27,7 +27,7 @@ class Manager_m extends CI_Model {
         return $query->result_array();
     }
 
-    //Выбрать категория для фильтр|Пручковский
+    //Фильтровать категория|Пручковский
     public function sel_category_filter($ID_category = null)
     {
         $query = $this->db->select("*")
@@ -42,7 +42,7 @@ class Manager_m extends CI_Model {
         return $query->result_array();
     }
 
-    //Выбрать вид для фильтр|Пручковский
+    //Фильтровать вид|Пручковский
     public function sel_type_filter($ID_type = null)
     {
         $query = $this->db->select("*")
@@ -57,7 +57,7 @@ class Manager_m extends CI_Model {
         return $query->result_array();
     }
 
-    //Выбрать форм для фильтр|Пручковский
+    //Фильтровать форм|Пручковский
     public function sel_form_filter($ID_form = null)
     {
         $query = $this->db->select("*")
@@ -72,7 +72,7 @@ class Manager_m extends CI_Model {
         return $query->result_array();
     }
 
-    //Выбрать макс.стоимость для фильтр|Пручковский
+    //Фильтровать макс.стоимость|Пручковский
     public function sel_number_filter($number = null)
     {
         $query = $this->db->select("*")
@@ -87,7 +87,7 @@ class Manager_m extends CI_Model {
         return $query->result_array();
     }
 
-    //Выбрать фид|Пручковский
+    //Выбрать вид|Пручковский
     public function sel_type()
     {
         $query = $this->db->get('type');
@@ -108,7 +108,7 @@ class Manager_m extends CI_Model {
         return $query->result_array();
     }
 
-    //Выбрать форма|Пручковский
+    //Выбрать запись|Пручковский
     public function sel_teaching()
     {
         $query = $this->db->select("*")

@@ -28,7 +28,7 @@ class User_m extends CI_Model {
         $this->session->sess_destroy();
     }
     
-    //Выбрать пользователя|Кузнецов
+    //Выбрать пользователя|Пручковский
     public function sel_user_table()
     {
         $query = $this->db->get('users');
