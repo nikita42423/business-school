@@ -36,7 +36,7 @@ class Main extends CI_Controller {
                 break;
                 case 'Менеджер': redirect(base_url('manager/browse_record'));
                 break;
-                case 'Директор': redirect(base_url('Директор'));
+                case 'Директор': redirect(base_url('director/browse_diretor'));
                 break;
             }
         }
