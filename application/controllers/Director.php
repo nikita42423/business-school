@@ -27,10 +27,10 @@ class Director extends CI_Controller {
         $this->load->model('reintech_m');
         $data['reinteachers'] = $this->reintech_m->sel_reinteach($date1, $date2);
         
-        $this->load->view("template/header");
-        $this->load->view("template/navbar_director", $data);
-        $this->load->view("page/browse_reinteachers");
-        $this->load->view("template/footer");
+        $this->load->view("templates/header");
+        $this->load->view("templates/navbar_director", $data);
+        $this->load->view("pages/browse_reinteachers");
+        $this->load->view("templates/footer");
     }
 
      //Рейтинг программ обучения | Харламоа
@@ -59,10 +59,10 @@ class Director extends CI_Controller {
         $this->load->model('reintech_m');
         $data['reinprom'] = $this->reintech_m->sel_reinprog($date1, $date2);
         
-        $this->load->view("template/header");
-        $this->load->view("template/navbar_director", $data);
-        $this->load->view("page/browse_reinprogmobus");
-        $this->load->view("template/footer");
+        $this->load->view("templates/header");
+        $this->load->view("templates/navbar_director", $data);
+        $this->load->view("pages/browse_reinprogmobus");
+        $this->load->view("templates/footer");
     }
 
 
@@ -92,10 +92,10 @@ class Director extends CI_Controller {
         $this->load->model('otcht_m');
         $data['otcht'] = $this->otcht_m->sel_otcht($date1, $date2);
         
-        $this->load->view("template/header");
-        $this->load->view("template/navbar_director", $data);
-        $this->load->view("page/browse_otchuslformobus");
-        $this->load->view("template/footer");
+        $this->load->view("templates/header");
+        $this->load->view("templates/navbar_director", $data);
+        $this->load->view("pages/browse_otchuslformobus");
+        $this->load->view("templates/footer");
     }
 
      //Список слушателей по выбранный программе| Харламоа
@@ -131,10 +131,10 @@ class Director extends CI_Controller {
         $data['spick'] = $this->otcht_m->sel_spick($date1, $date2, $ID_program);
         echo var_dump($this->db->last_query());
         $data['prog'] = $this->otcht_m->sel_spickok();
-        $this->load->view("template/header");
-        $this->load->view("template/navbar_director", $data);
-        $this->load->view("page/browse_spicslusprog");
-        $this->load->view("template/footer");
+        $this->load->view("templates/header");
+        $this->load->view("templates/navbar_director", $data);
+        $this->load->view("pages/browse_spicslusprog");
+        $this->load->view("templates/footer");
     }
 
 
