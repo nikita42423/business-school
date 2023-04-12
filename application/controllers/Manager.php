@@ -132,44 +132,42 @@
     //Добавление клиент|Пручковский
 	public function add_client()
 	{
-        if (!empty($_POST))
-        {
-            $data = array(
-                'full_name_client' => $this->input->post('fio'),
-                'date_client'      => $this->input->post('date'),
-                'pol'              => $this->input->post('pol'),
-                'series'           => $this->input->post('serie'),
-                'passport_number'  => $this->input->post('number'),
-                'address'          => $this->input->post('adress'),
-                'education'        => $this->input->post('education'),
-                'phone'            => $this->input->post('tel'),
-                'email'            => $this->input->post('email')
-            );
-            
-            $this->load->model('client_m');
-            $this->client_m->add_client($data);
+        $data = array(
+            'full_name_client' => $this->input->post('fio'),
+            'date_client'      => $this->input->post('date'),
+            'pol'              => $this->input->post('pol'),
+            'series'           => $this->input->post('serie'),
+            'passport_number'  => $this->input->post('number'),
+            'address'          => $this->input->post('adress'),
+            'education'        => $this->input->post('education'),
+            'phone'            => $this->input->post('tel'),
+            'email'            => $this->input->post('email')
+        );
+        
+        $this->load->model('client_m');
+        $this->client_m->add_client($data);
 
-            redirect(base_url('manager/browse_client'));
-        }
+        redirect(base_url('manager/browse_client'));
     }
 
     //Изменение клиента|Пручковский
     public function upd_client()
     {
         $ID_client        = $this->input->post('ID_client');
-        $full_name_client = $this->input->post('fio');
-        $date_client      = $this->input->post('date');
-        $pol              = $this->input->post('pol');
-        $series           = $this->input->post('serie');
-        $passport_number  = $this->input->post('number');
-        $address          = $this->input->post('adress');
-        $education        = $this->input->post('education');
-        $phone            = $this->input->post('tel');
-        $email            = $this->input->post('email');
+        $data = array(
+            'full_name_client' => $this->input->post('fio'),
+            'date_client'      => $this->input->post('date'),
+            'pol'              => $this->input->post('pol'),
+            'series'           => $this->input->post('serie'),
+            'passport_number'  => $this->input->post('number'),
+            'address'          => $this->input->post('adress'),
+            'education'        => $this->input->post('education'),
+            'phone'            => $this->input->post('tel'),
+            'email'            => $this->input->post('email')
+        );
 
         $this->load->model('client_m');
-        $this->client_m->upd_client($full_name_client, $date_client, $pol, $series, 
-        $passport_number, $address, $education, $phone, $email, $ID_client);
+        $this->client_m->upd_client($ID_client,$data);
 
         redirect('manager/browse_client');
     }
@@ -207,13 +205,15 @@
 	{
         if (!empty($_POST))
         {
-            $full_name_user = $this->input->post('fio');
-            $position       = $this->input->post('position');
-            $login          = $this->input->post('login');
-            $password       = $this->input->post('password');
-            
+            $data = array(
+                'full_name_user' => $this->input->post('fio'),
+                'position'       => $this->input->post('position'),
+                'login'          => $this->input->post('login'),
+                'password'       => $this->input->post('password')
+            );
+
             $this->load->model('user_m');
-            $this->user_m->add_user($full_name_user, $position, $login, $password);
+            $this->user_m->add_user($data);
 
             redirect(base_url('manager/browse_user'));
         }
@@ -225,13 +225,15 @@
         if (!empty($_POST))
         {
             $ID_user        = $this->input->post('ID_user');
-            $full_name_user = $this->input->post('fio');
-            $position       = $this->input->post('position');
-            $login          = $this->input->post('login');
-            $password       = $this->input->post('password');
+            $data = array(
+                'full_name_user' => $this->input->post('fio'),
+                'position'       => $this->input->post('position'),
+                'login'          => $this->input->post('login'),
+                'password'       => $this->input->post('password')
+            );
 
             $this->load->model('user_m');
-            $this->user_m->upd_user($full_name_user, $position, $login, $password, $ID_user);
+            $this->user_m->upd_user($ID_user,$data);
             redirect('manager/browse_user');
         }
     }

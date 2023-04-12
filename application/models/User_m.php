@@ -36,22 +36,16 @@ class User_m extends CI_Model {
     }
 
     //Добавить пользователя|Пручковский
-    public function add_user($full_name_user, $position, $login, $password)
+    public function add_user($data)
     {
-        $sql = "INSERT INTO `users`(`full_name_user`, `position`, `login`, `password`) 
-        VALUES ('$full_name_user', '$position', '$login', md5('$password'))";
-        $this->db->query($sql);
+        $this->db->insert('users', $data);
     }
 
     //Изменить пользователя|Пручковский
-    public function upd_user($full_name_user, $position, $login, $password, $ID_user)
+    public function upd_user($ID_user,$data)
     {
-        $this->db->set('full_name_user', $full_name_user)
-                 ->set('position', $position)
-                 ->set('login', $login)
-                 ->set('password', md5($password))
-                 ->where('ID_user', $ID_user)
-                 ->update('users');
+        $this->db->where('ID_user', $ID_user)
+                 ->update('users',$data);
     }
 
     //Удалить пользователя|Пручковский
