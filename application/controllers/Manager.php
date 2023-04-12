@@ -224,7 +224,7 @@
     {
         if (!empty($_POST))
         {
-            $ID_user        = $this->input->post('ID_user');
+            $ID_user = $this->input->post('ID_user');
             $data = array(
                 'full_name_user' => $this->input->post('fio'),
                 'position'       => $this->input->post('position'),
