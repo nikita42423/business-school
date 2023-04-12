@@ -45,12 +45,14 @@
     <!-- Скрипт для пагинации -->
     <script>
     $(document).ready(function () {
-        $('#reintch').DataTable();
+    $('#reintch').DataTable({
+        order: [[3, 'desc']],
+        });
     });
     </script>
 
     <table id="reintch" class="table table-striped" style="width:100%">
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <th scope="col">ФИО преподавателей</th>
                 <th scope="col">Кол-во клиентов</th>
@@ -61,7 +63,7 @@
         <tbody>
         <?php foreach ($reinteachers as $row) {?>
             <tr>
-                <th scope="row"><?=$row['full_name_teacher']?></th>
+                <td scope="row"><?=$row['full_name_teacher']?></td>
                 <td><?=$row['COUNT(client.ID_client)']?></td>
                 <td><?=$row['COUNT(client.ID_client)*SUM(program.Price)']?></td>
             </tr>

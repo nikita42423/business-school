@@ -27,6 +27,8 @@ class Director extends CI_Controller {
         $this->load->model('reintech_m');
         $data['reinteachers'] = $this->reintech_m->sel_reinteach($date1, $date2);
         
+        echo var_dump($this->db->last_query());
+    
         $this->load->view("templates/header");
         $this->load->view("templates/navbar_director", $data);
         $this->load->view("pages/browse_reinteachers");

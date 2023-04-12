@@ -17,6 +17,7 @@ class Reintech_m extends CI_Model {
                             ->where('teaching.ID_client = client.ID_client')
                             ->where("schedule.date_start_s BETWEEN '$date1' AND '$date2'")
                             ->group_by('full_name_teacher')
+                            ->order_by('COUNT(client.ID_client)*SUM(program.Price)', 'DESC')
                             ->get();
         return $query->result_array();
     }
