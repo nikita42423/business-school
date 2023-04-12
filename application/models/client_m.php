@@ -20,20 +20,10 @@ class Client_m extends CI_Model {
     }
 
     //Изменить клиент|Пручковский
-    public function upd_client($full_name_client, $date_client, $pol, 
-    $series, $passport_number, $address, $education, $phone, $email, $ID_client)
+    public function upd_client($ID_client,$data)
     {
-        $this->db->set('full_name_client', $full_name_client)
-                 ->set('date_client', $date_client)
-                 ->set('pol', $pol)
-                 ->set('series', $series)
-                 ->set('passport_number', $passport_number)
-                 ->set('address', $address)
-                 ->set('education', $education)
-                 ->set('phone', $phone)
-                 ->set('email', $email)
-                 ->where('ID_client', $ID_client)
-                 ->update('client');
+        $this->db->where('ID_client', $ID_client)
+                 ->update('client', $data);
     }
 
     //Удалить клиента|Пручковский
