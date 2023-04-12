@@ -60,11 +60,11 @@
 
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-primary"><i class="bi bi-person-vcard text-white"></i></span>
-                                                <input type="text" class="form-control" name="teaching" required value="<?=$row['ID_teaching']?>">
+                                                <input type="text" class="form-control" name="teaching" placeholder="ID" required value="<?=$row['ID_teaching']?>">
                                             </div>
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-primary"><i class="bi bi-person-vcard text-white"></i></span>
-                                                <input type="text" class="form-control" name="number" required>
+                                                <input type="text" class="form-control" name="number" placeholder="Номер документа" required>
                                             </div>
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-primary"><i class="bi bi-person-vcard text-white"></i></span>
