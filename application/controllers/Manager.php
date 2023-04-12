@@ -16,7 +16,7 @@
         $this->load->view('templates/footer');
     }
 
-    //Просмотр графика курсов|Пручковский
+    //Просмотр программы|Пручковский
 	public function browse_add_record()
 	{
         $this->load->model('manager_m');
