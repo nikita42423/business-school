@@ -1,7 +1,7 @@
 <?php
 class Form extends CI_Controller {
     
-    //Добавление формы|Кузнецов
+    //Добавление формы обучения|Кузнецов
 	public function add_form()
 	{
         if (!empty($_POST))
@@ -17,7 +17,7 @@ class Form extends CI_Controller {
         }
     }
 
-    //Удаление формы|Кузнецов
+    //Удаление формы обучения|Кузнецов
 	public function del_form()
 	{
         $data = array(
@@ -26,6 +26,20 @@ class Form extends CI_Controller {
 
         $this->load->model('form_m');
         $this->form_m->del_form($data);
+
+        redirect(base_url('methodist/browse_form'));
+    }
+
+    //Изменение формы обучения|Кузнецов
+	public function upd_form()
+	{
+        $id   = $this->input->post('ID_form');
+        $data = array(
+            'name_form' => $this->input->post('name_form')
+        );
+
+        $this->load->model('form_m');
+        $this->form_m->upd_form($id, $data);
 
         redirect(base_url('methodist/browse_form'));
     }

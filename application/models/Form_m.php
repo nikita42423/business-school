@@ -6,22 +6,29 @@ class Form_m extends CI_Model {
         $this->load->database();
     }
 
-    //Выбрать форму|Кузнецов
+    //Выбрать форму обучения|Кузнецов
     public function sel_form()
     {
         $query = $this->db->get('form');
         return $query->result_array();
     }
 
-    //Добавить форму|Кузнецов
+    //Добавить форму обучения|Кузнецов
     public function add_form($data)
     {
         $this->db->insert('form', $data);
     }
 
-    //Удалить форму|Кузнецов
+    //Удалить форму обучения|Кузнецов
     public function del_form($data)
     {
         $this->db->delete('form', $data);
+    }
+
+    //Изменить форму обучения|Кузнецов
+    public function upd_form($id, $data)
+    {
+        $this->db->where('ID_form', $id)
+                 ->update('form', $data);
     }
 }

@@ -24,4 +24,11 @@ class Teacher_m extends CI_Model {
     {
         $this->db->delete('teacher', $data);
     }
+
+    //Изменить преподаватель|Кузнецов
+    public function upd_teacher($id, $data)
+    {
+        $this->db->where('ID_teacher', $id)
+                 ->update('teacher', $data);
+    }
 }

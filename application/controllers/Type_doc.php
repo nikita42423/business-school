@@ -29,4 +29,18 @@ class Type_doc extends CI_Controller {
 
         redirect(base_url('methodist/browse_type_doc'));
     }
+
+    //Изменение вида документа|Кузнецов
+	public function upd_type_doc()
+	{
+        $id   = $this->input->post('ID_type_doc');
+        $data = array(
+            'name_doc' => $this->input->post('name_doc')
+        );
+
+        $this->load->model('type_doc_m');
+        $this->type_doc_m->upd_type_doc($id, $data);
+
+        redirect(base_url('methodist/browse_type_doc'));
+    }
 }

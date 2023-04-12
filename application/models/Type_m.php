@@ -24,5 +24,11 @@ class Type_m extends CI_Model {
     {
         $this->db->delete('type', $data);
     }
-    
+
+    //Изменить вид|Кузнецов
+    public function upd_type($id, $data)
+    {
+        $this->db->where('ID_type', $id)
+                 ->update('type', $data);
+    }
 }

@@ -12,7 +12,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="<?=base_url('methodist/browse_form')?>">Форма</a>
+            <a class="nav-link" href="<?=base_url('methodist/browse_form')?>">Форма обучения</a>
         </li>
 
         <li class="nav-item">
@@ -55,7 +55,35 @@
                 <th scope="row"><?=$row['ID_type_doc']?></th>
                 <td><?=$row['name_doc']?></td>
                 <td>
-                    <a href="" class="btn btn-primary">Изменить</a>
+                    <!-- Кнопка-триггер модального окна -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#<?=$row['ID_type_doc']?>">Изменить</button>
+
+                    <!-- Модальное окно -->
+                    <div class="modal fade" id="<?=$row['ID_type_doc']?>" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Изменение вида документа</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                                </div>
+
+                                <form class="row g-3 mb-3" action="<?=base_url('type_doc/upd_type_doc')?>" method="post">
+                                <div class="modal-body">
+                                    <input type="hidden" name="ID_type_doc" value="<?=$row['ID_type_doc']?>">
+                                    <div>
+                                        <label for="name_doc" class="form-label">Название вида</label>
+                                        <input type="text" name="name_doc" class="form-control" value="<?=$row['name_doc']?>" required>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                                    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                                </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
                 </td>
                 <td>
                     <a href="<?=base_url('type_doc/del_type_doc?ID_type_doc='.$row['ID_type_doc'])?>" class="btn btn-danger">Удалить</a>

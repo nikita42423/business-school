@@ -29,4 +29,18 @@ class Type extends CI_Controller {
 
         redirect(base_url('methodist/browse_type'));
     }
+
+    //Изменение вида|Кузнецов
+	public function upd_type()
+	{
+        $id   = $this->input->post('ID_type');
+        $data = array(
+            'name_type' => $this->input->post('name_type')
+        );
+
+        $this->load->model('type_m');
+        $this->type_m->upd_type($id, $data);
+
+        redirect(base_url('methodist/browse_type'));
+    }
 }

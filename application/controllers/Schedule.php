@@ -10,7 +10,7 @@ class Schedule extends CI_Controller {
                 'ID_program'         => $this->input->post('ID_program'),
                 'date_start_s'       => $this->input->post('date_start_s'),
                 'date_end_s'         => $this->input->post('date_end_s'),
-                'max_count_listener' => $this->input->post('max_count_listener'),
+                'max_count_listener' => $this->input->post('max_count_listener')
             );
 
             $this->load->model('schedule_m');
@@ -29,6 +29,24 @@ class Schedule extends CI_Controller {
 
         $this->load->model('schedule_m');
         $this->schedule_m->del_schedule($data);
+
+        redirect(base_url('methodist/browse_schedule_methodist'));
+    }
+
+    //Изменение графика курсов|Кузнецов
+	public function upd_schedule()
+	{
+        $id   = $this->input->post('ID_schedule');
+        $data = array(
+            'ID_program'            => $this->input->post('ID_program'),
+            'date_start_s'          => $this->input->post('date_start_s'),
+            'date_end_s'            => $this->input->post('date_end_s'),
+            'max_count_listener'    => $this->input->post('max_count_listener'),
+            'actual_count_listener' => $this->input->post('actual_count_listener')
+        );
+
+        $this->load->model('schedule_m');
+        $this->schedule_m->upd_schedule($id, $data);
 
         redirect(base_url('methodist/browse_schedule_methodist'));
     }

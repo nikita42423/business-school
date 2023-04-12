@@ -24,4 +24,11 @@ class Category_m extends CI_Model {
     {
         $this->db->delete('category', $data);
     }
+
+    //Изменить категорию|Кузнецов
+    public function upd_category($id, $data)
+    {
+        $this->db->where('ID_category', $id)
+                 ->update('category', $data);
+    }
 }

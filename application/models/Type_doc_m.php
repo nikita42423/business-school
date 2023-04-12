@@ -24,4 +24,11 @@ class Type_doc_m extends CI_Model {
     {
         $this->db->delete('type_doc', $data);
     }
+
+    //Изменить вид документа|Кузнецов
+    public function upd_type_doc($id, $data)
+    {
+        $this->db->where('ID_type_doc', $id)
+                 ->update('type_doc', $data);
+    }
 }

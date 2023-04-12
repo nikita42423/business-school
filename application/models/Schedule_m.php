@@ -24,5 +24,12 @@ class Schedule_m extends CI_Model {
     public function del_schedule($data)
     {
         $this->db->delete('schedule', $data);
-    }    
+    }
+
+    //Изменить график курсов|Кузнецов
+    public function upd_schedule($id, $data)
+    {
+        $this->db->where('ID_schedule', $id)
+                 ->update('schedule', $data);
+    }
 }
