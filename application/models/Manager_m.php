@@ -20,14 +20,14 @@ class Manager_m extends CI_Model {
         return $query->result_array();
     }
 
-    //Выбрать категория|Пручковский
+    //Выбрать категорию|Пручковский
     public function sel_category()
     {
         $query = $this->db->get('category');
         return $query->result_array();
     }
 
-    //Выбрать категория для фильтр|Пручковский
+    //Выбрать категорию для фильтра|Пручковский
     public function sel_category_filter($ID_category = null)
     {
         $query = $this->db->select("*")
@@ -42,7 +42,7 @@ class Manager_m extends CI_Model {
         return $query->result_array();
     }
 
-    //Выбрать вид для фильтр|Пручковский
+    //Выбрать вид для фильтра|Пручковский
     public function sel_type_filter($ID_type = null)
     {
         $query = $this->db->select("*")
@@ -57,7 +57,7 @@ class Manager_m extends CI_Model {
         return $query->result_array();
     }
 
-    //Выбрать форм для фильтр|Пручковский
+    //Выбрать форму для фильтра|Пручковский
     public function sel_form_filter($ID_form = null)
     {
         $query = $this->db->select("*")
@@ -72,7 +72,7 @@ class Manager_m extends CI_Model {
         return $query->result_array();
     }
 
-    //Выбрать макс.стоимость для фильтр|Пручковский
+    //Выбрать макс.стоимость для фильтра|Пручковский
     public function sel_number_filter($number = null)
     {
         $query = $this->db->select("*")
@@ -87,28 +87,28 @@ class Manager_m extends CI_Model {
         return $query->result_array();
     }
 
-    //Выбрать фид|Пручковский
+    //Выбрать вид|Пручковский
     public function sel_type()
     {
         $query = $this->db->get('type');
         return $query->result_array();
     }
 
-    //Выбрать форма|Пручковский
+    //Выбрать форму|Пручковский
     public function sel_form()
     {
         $query = $this->db->get('form');
         return $query->result_array();
     }
 
-    //Выбрать клиента|Пручковский
+    //Выбрать клиент|Пручковский
     public function sel_client()
     {
         $query = $this->db->get('client');
         return $query->result_array();
     }
 
-    //Выбрать форма|Пручковский
+    //Выбрать обучение|Пручковский
     public function sel_teaching()
     {
         $query = $this->db->select("*")
@@ -120,7 +120,7 @@ class Manager_m extends CI_Model {
         return $query->result_array();
     }
 
-    //Выбрать графика курсов|Пручковский
+    //Выбрать график курсов|Пручковский
     public function sel_schedule($ID_program = null)
     {
         $query = $this->db->select("*")
